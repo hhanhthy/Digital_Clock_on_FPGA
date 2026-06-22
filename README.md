@@ -1,5 +1,6 @@
 # Digital_Clock_on_FPGA
-Demo Video: https://www.youtube.com/watch?v=I9IBpSwVAUA
+Demo Video: https://youtu.be/-4mvUKoOuOU
+Project Presentation: https://www.youtube.com/watch?v=I9IBpSwVAUA
 
 ## Overview
 
