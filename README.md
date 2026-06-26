@@ -4,7 +4,7 @@
 
 **Project Presentation:** [Presentation](https://www.youtube.com/watch?v=I9IBpSwVAUA)
  
----
+
  
 ## Overview
  
@@ -12,7 +12,7 @@ This project implements a **Digital Clock on FPGA** using **Verilog HDL**, featu
  
 The design focuses on key digital hardware concepts, including synchronous system design, finite state machine (FSM) control, clock division, button debouncing, and multiplexed 7-segment display driving. By integrating these components into a complete FPGA-based application, the project demonstrates the practical implementation of a reliable real-time digital system.
  
----
+
  
 ## Target Platform
  
@@ -26,7 +26,7 @@ The design focuses on key digital hardware concepts, including synchronous syste
  
 ![FPGA Board](Microchip.png)
  
----
+
  
 ## Features
  
@@ -37,7 +37,7 @@ The design focuses on key digital hardware concepts, including synchronous syste
 - **Count Up** — stopwatch-style count-up with start/pause/resume
 - **Alarm Ringing** — triggers when real-time matches alarm time
 - **Snooze** — delays the alarm by 5 minutes; auto-dismiss after 60 seconds
----
+
  
 ## System Architecture
  
@@ -56,7 +56,7 @@ The design is organized into four modular blocks inside `top.v`:
 | **DATAPATH** | Real-time counters, alarm/snooze comparison logic, binary outputs |
 | **OUTPUT** | BCD conversion, time-division multiplexing for 7-segment display |
  
----
+
  
 ## Module Details
  
@@ -96,7 +96,7 @@ A Moore FSM controlling 7 operational states:
  
 State transitions are driven by button presses (`bt1_select`, `bt2_set`), switch positions, and datapath comparison flags (`alarm_match`, `snooze_match`).
  
----
+
  
 ## Input Controls
  
@@ -118,7 +118,7 @@ State transitions are driven by button presses (`bt1_select`, `bt2_set`), switch
 | **Button 1** | Cycle through modes (0→IDLE, 1→SETTIME, 2→SETALARM, 3→COUNTDOWN, 4→COUNTUP); press in any mode to return to IDLE |
 | **Button 2** | Confirm selected mode / increment or decrement the active time field |
  
----
+
  
 ## Simulation Results
  
