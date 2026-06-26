@@ -1,6 +1,8 @@
 # Digital Clock on FPGA
  
-**Demo Video:** [Demo Digital Clock on FPGA](https://youtu.be/-4mvUKoOuOU) | **Project Presentation:** [Presentation](https://www.youtube.com/watch?v=I9IBpSwVAUA)
+**Demo Video:** [Demo Digital Clock on FPGA](https://youtu.be/-4mvUKoOuOU) 
+
+**Project Presentation:** [Presentation](https://www.youtube.com/watch?v=I9IBpSwVAUA)
  
 ---
  
