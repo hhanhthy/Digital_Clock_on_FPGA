@@ -124,31 +124,31 @@ State transitions are driven by button presses (`bt1_select`, `bt2_set`), switch
  
 ### Case 1 — Set Hour
  
-![Set Hour Waveform](images/1_sethour.png)
+![Set Hour Waveform](images/1.sethour.png)
  
 Entering SET_TIME via Button 1 + Button 2, adjusting hours/minutes with SW2/SW3, then returning to IDLE. The `realtime_reg` is updated and output through `bin1`/`bin2`.
  
 ### Case 2 — Count Up / Down
  
-![Count Up/Down Waveform](images/2_countupdown.png)
+![Count Up/Down Waveform](images/2.countupdown.png)
  
 Verifies Start / Pause / Resume logic using button toggles in COUNTUP state.
  
 ### Case 3 — Alarm Trigger
  
-![Alarm Trigger Waveform](images/3_alarmtrigger.png)
+![Alarm Trigger Waveform](images/3.alarmtrigger.png)
  
 When real-time matches the alarm register, the FSM transitions from IDLE → RINGING (state `101`).
  
 ### Case 4 — Alarm Turn-off
  
-![Alarm Turn-off Waveform](images/4_alarmturnoff.png)
+![Alarm Turn-off Waveform](images/4.alarmturnoff.png)
  
 Toggling SW4 while RINGING returns the system to IDLE and silences the alarm.
  
 ### Case 5 — Snooze Mechanism
  
-![Snooze Waveform](images/5_snooze.png)
+![Snooze Waveform](images/5.snooze.png)
  
 Toggling SW5 while RINGING moves the FSM to SNOOZE (state `110`), adds 5 minutes to the snooze register, and re-triggers RINGING when `snooze_match` fires. If SW4 is toggled instead, or no action is taken within 60 seconds, the system automatically returns to IDLE.
 
