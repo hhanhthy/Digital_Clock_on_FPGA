@@ -24,7 +24,7 @@ The design focuses on key digital hardware concepts, including synchronous syste
 | **EDA Tool** | Microchip Libero SoC |
 | **Simulator** | ModelSim |
  
-![FPGA Board](Microchip.png)
+![FPGA Board](images/Microchip.png)
  
 
  
@@ -43,11 +43,11 @@ The design focuses on key digital hardware concepts, including synchronous syste
  
 The design is organized into four modular blocks inside `top.v`:
  
-![Top-level Interface](diagrams/1_interface.png)
+![Top-level Interface](diagrams/Digital_clock-1_interface.png)
  
 ### Block Diagram
  
-![Internal Architecture](diagrams/2_Top.png)
+![Internal Architecture](diagrams/Digital_clock-2_Top.png)
  
 | Block | Role |
 |-------|------|
@@ -62,25 +62,25 @@ The design is organized into four modular blocks inside `top.v`:
  
 ### INPUT Block
  
-![Input Block](diagrams/3_Input.png)
+![Input Block](diagrams/Digital_clock-3_Input.png)
  
 Receives raw `switch[4:0]` and `bt[1:0]` signals from the PolarFire board, performs digital debouncing, and outputs clean internal control signals along with `tick_1Hz` and `tick_1kHz` for the rest of the system.
  
 ### OUTPUT Block
  
-![Output Block](diagrams/4_Output.png)
+![Output Block](diagrams/Digital_clock-4_Output.png)
  
 Converts 6-bit binary time data (`bin1`, `bin2`) into BCD digits, then drives 4 seven-segment digits using high-frequency time-division multiplexing at 1 kHz to eliminate flicker.
  
 ### DATAPATH Block
  
-![Datapath Block](diagrams/5_Datapath.png)
+![Datapath Block](diagrams/Digital_clock-5_Datapath.png)
  
 Maintains three synchronized counters — Hours (Mod-24), Minutes (Mod-60), Seconds (Mod-60) — clocked by `tick_1Hz`. Continuously compares real-time against alarm and snooze registers to assert `alarm_match` and `snooze_match` flags.
  
 ### FSM Block
  
-![FSM Block](diagrams/5_FSM.png)
+![FSM Block](diagrams/Digital_clock-5_FSM.png)
  
 A Moore FSM controlling 7 operational states:
  
